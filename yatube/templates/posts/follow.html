@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %}Избранное{% endblock %}
+{% block content %}
+{% include 'posts/includes/switcher.html' with follow=True %}
+  {% for post in page_obj %}
+    {% include 'posts/includes/post.html' %}
+  {% endfor %}
+  {% include 'posts/includes/paginator.html' %}
+{% endblock %}
